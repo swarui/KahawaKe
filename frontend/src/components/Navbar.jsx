@@ -65,7 +65,7 @@ function Navbar() {
         <div className="hidden lg:flex items-center justify-center w-full text-black">
           <ul style={{fontFamily:'Poppins'}}  className="flex flex-row gap-8 text-[14.7px] cursor-pointer">
             <a href="#home">
-              <li className="hover:text-orange-800 " >Home</li>
+              <li className="hover:text-orange-700 " >Home</li>
               
             </a>
             <a href="#menu">
