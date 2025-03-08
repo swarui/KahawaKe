@@ -6,7 +6,8 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "",
+    subject: "",
+    company: "",
   })
 
   const handleChange = (e) => {
@@ -19,86 +20,88 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Handle form submission logic here
     console.log("Form submitted:", formData)
   }
 
   return (
-    <section className="w-full py-8 md:py-12 lg:py-16 bg-[#F9F1E7]">
+
+    <>
+    <div id="contact" ></div>
+    <section  style={{fontFamily:'Poppins'}} className="w-full py-8 md:py-12 lg:py-16 bg-black text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          {/* Form Section */}
-          <div className="w-full lg:w-1/2 p-4 sm:p-6 md:p-8 bg-[#F4D8B5] rounded-lg border border-[#A14527] shadow-md">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#A14527] mb-6">Get in Touch</h2>
+          {/* Left Section */}
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
+            <p className="mb-6 text-gray-400">
+            We're here to help you with any inquiries, collaborations, or concerns you may have. Our team is dedicated to providing the support you need. 
+            </p>
+            <p className="mb-6 text-gray-400" >Whether you're seeking information about our services, exploring partnership opportunities, or simply want to say hello, we encourage you to reach out. </p>
+            <p className="mb-6 text-gray-400">We value your input and look forward to connecting with you soon.</p>
+            <div className="space-y-4">
+              <p>📍 Nairobi, Kenya</p>
+              <p>🕒 Open 9AM - 5PM</p>
+            </div>
+          </div>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="space-y-2">
-                <label htmlFor="name" className="block text-lg font-medium text-gray-800">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full border-b-2 border-[#A14527] bg-transparent focus:outline-none focus:border-[#842E1A] py-2 px-1 transition-colors"
-                  required
-                />
-              </div>
+          {/* Right Section (Form) */}
+          <div className="w-full lg:w-1/2 p-4 bg-[#1a1a1a] rounded-lg border border-[#A14527] shadow-md">
+            <h2 className="text-2xl font-bold text-orange-900 mb-6">Your Details</h2>
 
-              <div className="space-y-2">
-                <label htmlFor="email" className="block text-lg font-medium text-gray-800">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full border-b-2 border-[#A14527] bg-transparent focus:outline-none focus:border-[#842E1A] py-2 px-1 transition-colors"
-                  required
-                />
-              </div>
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name"
+                className="w-full bg-transparent border-b border-[#A14527] py-2 px-1 focus:outline-none focus:border-[#842E1A]"
+                required
+              />
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="block text-lg font-medium text-gray-800">
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full border-b-2 border-[#A14527] bg-transparent focus:outline-none focus:border-[#842E1A] py-2 px-1 transition-colors resize-y min-h-[100px]"
-                  required
-                ></textarea>
-              </div>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email Address"
+                className="w-full bg-transparent border-b border-[#A14527] py-2 px-1 focus:outline-none focus:border-[#842E1A]"
+                required
+              />
+
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Subject"
+                className="w-full bg-transparent border-b border-orange-900 py-2 px-1 focus:outline-none focus:border-[#842E1A]"
+                required
+              />
+
+              <input
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                placeholder="Company / Guest Info"
+                className="w-full bg-transparent border-b border-[#A14527] py-2 px-1 focus:outline-none focus:border-[#842E1A]"
+                required
+              />
 
               <button
                 type="submit"
-                className="w-full py-3 bg-[#A14527] text-white text-lg rounded-md hover:bg-[#842E1A] transition-colors focus:outline-none focus:ring-2 focus:ring-[#A14527] focus:ring-opacity-50 shadow-md"
+                className="w-full py-3 bg-orange-900 text-white text-lg rounded-md hover:bg-[#842E1A] transition-colors focus:outline-none focus:ring-2 focus:ring-[#A14527] focus:ring-opacity-50 shadow-md"
               >
                 Send Message
               </button>
             </form>
           </div>
-
-          {/* Image Section */}
-          <div className="w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-auto rounded-lg overflow-hidden border border-[#A14527] shadow-md">
-            <img
-              src="/placeholder.svg?height=600&width=800"
-              alt="Coffee with heart art"
-              className="w-full h-full object-cover"
-            />
-          </div>
         </div>
       </div>
     </section>
+    </>
   )
 }
 
 export default ContactSection
-
