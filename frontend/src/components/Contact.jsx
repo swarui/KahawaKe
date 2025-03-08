@@ -1,121 +1,104 @@
-import Mocha from "../assets/Mocha.jpeg";
-import { useState } from "react";
-import axios from "axios";
+"use client"
 
-function Contact ()  {
-    const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: "",
-    });
+import { useState } from "react"
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
+const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await axios.post("http://localhost:5000/contact", formData);
-            alert("Message sent successfully!");
-            setFormData({ firstName: "", lastName: "", email: "", message: "" });
-        } catch (error) {
-            console.error("Error sending message:", error);
-            alert("Failed to send message.");
-        }
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
 
-    return (
-        <div id="contact">
-            {/* Header Section */}
-            <div  style={{fontFamily:'Poppins'}} className="text-center mt-20">
-                <h1 className="text-center text-2xl sm:text-3xl font-bold text-[#3e2723] mb-2">Contact us</h1>
-                <h2 className="text-center text-sm sm:text-base text-[#3e2723] mb-6">Reach Out</h2>
-            </div>
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Handle form submission logic here
+    console.log("Form submitted:", formData)
+  }
 
-            {/* Main Contact Section */}
-            <section style={{fontFamily:'Poppins'}}  className="flex flex-col md:flex-row items-stretch justify-center p-4 md:p-8 gap-8">
-                {/* Contact Form */}
-                <div className="w-full md:w-[55%] flex flex-col bg-orange-100 border border-orange-800 rounded-lg p-6 md:p-10 shadow-md">
-                    <form onSubmit={handleSubmit} className="flex flex-col space-y-4 h-full">
-                        {/* First and Last Name */}
-                        <div className="flex flex-row w-full space-x-4">
-                            <div className="flex flex-col w-1/2">
-                                <h2 className="text-sm sm:text-base mb-1">First Name</h2>
-                                <input
-                                    type="text"
-                                    name="firstName"
-                                    value={formData.firstName}
-                                    onChange={handleChange}
-                                    required
-                                    className="text-sm sm:text-base border-b border-black focus:outline-none focus:border-orange-800"
-                                    style={{ height: "7vh", fontFamily:'Poppins' }}
-                                />
-                            </div>
-                            <div className="flex flex-col w-1/2">
-                                <h2 className="text-sm sm:text-base mb-1">Last Name</h2>
-                                <input
-                                    type="text"
-                                    name="lastName"
-                                    value={formData.lastName}
-                                    onChange={handleChange}
-                                    required
-                                    className="text-sm sm:text-base border-b border-black focus:outline-none focus:border-orange-800"
-                                    style={{ height: "7vh" }}
-                                />
-                            </div>
-                        </div>
+  return (
+    <section className="w-full py-8 md:py-12 lg:py-16 bg-[#F9F1E7]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          {/* Form Section */}
+          <div className="w-full lg:w-1/2 p-4 sm:p-6 md:p-8 bg-[#F4D8B5] rounded-lg border border-[#A14527] shadow-md">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#A14527] mb-6">Get in Touch</h2>
 
-                        {/* Email Address */}
-                        <div className="flex flex-col">
-                            <h2 className="text-sm sm:text-base mb-1">Email Address</h2>
-                            <input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                                className="text-sm sm:text-base border-b border-black focus:outline-none focus:border-orange-800"
-                                style={{ height: "7vh" }}
-                            />
-                        </div>
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div className="space-y-2">
+                <label htmlFor="name" className="block text-lg font-medium text-gray-800">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full border-b-2 border-[#A14527] bg-transparent focus:outline-none focus:border-[#842E1A] py-2 px-1 transition-colors"
+                  required
+                />
+              </div>
 
-                        {/* Your Message */}
-                        <div className="flex flex-col">
-                            <h2 className="text-sm sm:text-base mb-1">Your Message</h2>
-                            <textarea
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                                className="text-sm sm:text-base border-b border-black focus:outline-none focus:border-orange-800 resize-none"
-                                style={{ height: "12vh" }}
-                            />
-                        </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-lg font-medium text-gray-800">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full border-b-2 border-[#A14527] bg-transparent focus:outline-none focus:border-[#842E1A] py-2 px-1 transition-colors"
+                  required
+                />
+              </div>
 
-                        {/* Submit Button */}
-                        <button
-                            type="submit"
-                            className="mt-4 bg-orange-800 text-white py-2 px-4 rounded-md text-sm sm:text-base hover:bg-orange-700"
-                        >
-                            Send Message
-                        </button>
-                    </form>
-                </div>
+              <div className="space-y-2">
+                <label htmlFor="message" className="block text-lg font-medium text-gray-800">
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full border-b-2 border-[#A14527] bg-transparent focus:outline-none focus:border-[#842E1A] py-2 px-1 transition-colors resize-y min-h-[100px]"
+                  required
+                ></textarea>
+              </div>
 
-                {/* Image Section */}
-                <div className="w-full md:w-[45%] flex items-center justify-center h-full">
-                    <div className="w-full max-w-lg">
-                        <img src={Mocha} className="w-full h-full object-cover border border-black rounded-lg shadow-lg" alt="Coffee with heart latte art" />
-                    </div>
-                </div>
-            </section>
+              <button
+                type="submit"
+                className="w-full py-3 bg-[#A14527] text-white text-lg rounded-md hover:bg-[#842E1A] transition-colors focus:outline-none focus:ring-2 focus:ring-[#A14527] focus:ring-opacity-50 shadow-md"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          {/* Image Section */}
+          <div className="w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-auto rounded-lg overflow-hidden border border-[#A14527] shadow-md">
+            <img
+              src="/placeholder.svg?height=600&width=800"
+              alt="Coffee with heart art"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
-    );
-};
+      </div>
+    </section>
+  )
+}
 
-export default Contact;
+export default ContactSection
+
