@@ -66,7 +66,7 @@ function Footer() {
           <p>
             Contact Us <br />
             P: +254 790 224 262 <br />
-            M: contact@kahawake.co.ke
+            M: mainastevew@gmail.com
           </p>
         </div>
 
