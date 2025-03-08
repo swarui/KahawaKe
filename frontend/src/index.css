@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @font-face {
     font-family: gristela;
     src: url(../src/assets/fonts/gristela.otf)format('woff2'),;
