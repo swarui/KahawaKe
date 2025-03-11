@@ -28,7 +28,7 @@ const ContactSection = () => {
     setIsSending(true);
 
     try {
-      const response = await fetch("https://pk1-xhy3.onrender.com/contact", {
+      const response = await fetch("https://kahawake-1.onrender.com//contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
