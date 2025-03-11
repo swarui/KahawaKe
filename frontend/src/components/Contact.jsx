@@ -1,9 +1,12 @@
 "use client";
-
+import { FaInstagram } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa6";
 import "animate.css";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
+
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -111,7 +114,7 @@ const ContactSection = () => {
       <div id="contact"></div>
       <section
         style={{ fontFamily: "Poppins" }}
-        className="w-full py-8 md:py-12 lg:py-16 bg-black text-white"
+        className="w-full py-8 md:py-12 lg:py-16 bg-orange-900 text-white"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
@@ -128,6 +131,36 @@ const ContactSection = () => {
                 our services, or simply want to say hello, we'd love to hear
                 from you.
               </p>
+           
+
+              {/* Contact Information Section */}
+              <div
+                style={{ fontFamily: "Poppins" }}
+                className="flex flex-col gap-4 text-sm sm:text-md mt-6"
+              >
+                <p>
+                  <strong>Location</strong> <br />
+                  Kahawa Ke Central Office <br />
+                  123 Coffee Lane, Kikuyu, KE
+                </p>
+                <p>
+                  <strong>Contact Us</strong> <br />
+                  P: +254 79555554 262 <br />
+                  M: mainotei@gmail.com
+                </p>
+                
+              </div>
+                 <div className="flex justify-start md:justify-center gap-4 text-center sm:justify-center">
+                  <a href="#" className="hover:text-orange-500 transition duration-300">
+                    <FaInstagram className="w-6 h-5 sm:w-5 sm:h-5" />
+                  </a>
+                  <a href="#" className="hover:text-orange-500 transition duration-300">
+                    <BsTwitterX className="w-6 h-5 sm:w-5 sm:h-5" />
+                  </a>
+                  <a href="#" className="hover:text-orange-500 transition duration-300">
+                    <FaFacebookF className="w-6 h-5 sm:w-5 sm:h-5" />
+                  </a>
+                </div>
             </div>
 
             <div className="w-full lg:w-1/2 p-4 bg-[#1a1a1a] rounded-lg border border-[#A14527] shadow-md">
