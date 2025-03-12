@@ -7,10 +7,11 @@ function Footer() {
   return (
     <footer className="bg-black text-gray-300  px-10 md:px-20">
       {/* Top Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center border-b border-gray-100 pb-6 gap-6">
+      <div className="flex flex-col md:flex-row justify-between items-center border-b border-gray-100 pb- gap-6">
         {/* Logo and Name */}
         <div className="flex items-center gap-4">
-          <img src={Logo} className="w-16 h-auto" alt="Kahawa Ke Logo" />
+          <img href="https://kahawa-ke.netlify.app/"
+   src={Logo} className="w-16 h-auto" alt="Kahawa Ke Logo" />
           <h2
             style={{ fontFamily: "Poppins", fontWeight: "bold" }}
             className="text-xl sm:text-2xl"

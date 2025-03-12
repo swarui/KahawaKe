@@ -41,7 +41,7 @@ function Navbar() {
         }`}
       >
         <div className="flex items-center">
-          <a href="#home">
+          <a href="https://kahawa-ke.netlify.app/">
             {" "}
             <img src={Logo} className="w-20 h-auto" alt="Logo" />
           </a>
