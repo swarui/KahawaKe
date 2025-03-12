@@ -10,14 +10,17 @@ function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center border-b border-gray-100 pb- gap-6">
         {/* Logo and Name */}
         <div className="flex items-center gap-4">
-          <img href="https://kahawa-ke.netlify.app/"
-   src={Logo} className="w-16 h-auto" alt="Kahawa Ke Logo" />
+        <a href="https://kahawa-ke.netlify.app/" target="_blank" rel="noopener noreferrer">
+    <img 
+      src={Logo} 
+      className="w-16 h-auto"
+      alt="Kahawa Ke Logo" 
+    />
+  </a>
           <h2
             style={{ fontFamily: "Poppins", fontWeight: "bold" }}
             className="text-xl sm:text-2xl"
-          >
-            Kahawa Ke
-          </h2>
+          ></h2>
         </div>
 
         {/* Navigation Links */}
@@ -53,24 +56,21 @@ function Footer() {
       </div>
 
       <div
-  style={{ fontFamily: "Poppins" }}
-  className="flex justify-center py-4"
->
-  <span className="bg-slate-100 px-2 py-1 text-[12px] text-black">
-    © Kahawa Ke 2024, built by
-    <a
-      href="https://swarui.netlify.app"
-      target="_blank"
-      rel="noopener noreferrer"
-      className=" underline ml-1"
-    >
-      this guy
-    </a>
-  </span>
-</div>
- 
-
-
+        style={{ fontFamily: "Poppins" }}
+        className="flex justify-center py-4"
+      >
+        <span className="bg-slate-100 px-2 py-1 text-[12px] text-black">
+          © Kahawa Ke 2024, built by
+          <a
+            href="https://swarui.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" underline ml-1"
+          >
+            this guy
+          </a>
+        </span>
+      </div>
     </footer>
   );
 }
