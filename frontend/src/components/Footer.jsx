@@ -10,7 +10,7 @@ function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center border-b border-gray-100 pb- gap-6">
         {/* Logo and Name */}
         <div className="flex items-center gap-4">
-        <a href="https://kahawa-ke.netlify.app/" target="_blank" rel="noopener noreferrer">
+        <a href="https://kahawa-ke.netlify.app/"  rel="noopener noreferrer">
     <img 
       src={Logo} 
       className="w-16 h-auto filter brightness-900"

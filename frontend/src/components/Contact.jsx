@@ -59,6 +59,14 @@ const ContactSection = () => {
             popup: "animate__animated animate__fadeOut",
           },
         });
+
+        // Clear form fields after success
+        setFormData({
+          fullName: "",
+          emailAddress: "",
+          messageSubject: "",
+          companyInfo: "",
+        });
       } else {
         Swal.fire({
           title: "Oops!",
@@ -108,6 +116,7 @@ const ContactSection = () => {
       setIsSending(false);
     }
   };
+
 
   return (
     <>
