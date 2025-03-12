@@ -5,7 +5,7 @@ import { FaFacebookF } from "react-icons/fa6";
 
 function Footer() {
   return (
-    <footer className="bg-black text-gray-300 py-10 px-10 md:px-20">
+    <footer className="bg-black text-gray-300  px-10 md:px-20">
       {/* Top Section */}
       <div className="flex flex-col md:flex-row justify-between items-center border-b border-gray-100 pb-6 gap-6">
         {/* Logo and Name */}

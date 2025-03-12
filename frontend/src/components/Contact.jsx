@@ -120,12 +120,12 @@ const ContactSection = () => {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <div className="w-full lg:w-1/2">
               <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-              <p className="mb-6 text-gray-400">
+              <p className="mb-6 lg:text-[1.0em] sm:text-[0.975em]">
                 Feel free to reach out to us for any inquiries or
                 collaborations. We're here to assist you and answer any
                 questions you may have.
               </p>
-              <p className="mb-6 text-gray-400">
+              <p className="mb-6 lg:text-[1.0em] sm:text-[0.975em]    ">
                 Our team is dedicated to providing the support you need. Whether
                 you're looking for partnership opportunities, information about
                 our services, or simply want to say hello, we'd love to hear
@@ -211,7 +211,7 @@ const ContactSection = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-3 bg-orange-900 text-white text-lg rounded-md hover:bg-[#842E1A] transition-colors focus:outline-none focus:ring-2 focus:ring-[#A14527] focus:ring-opacity-50 shadow-md"
+                  className="w-full py-3 bg-orange-900  lg:text-[1.0em] sm:text-[0.975em] text-white text-lg rounded-md hover:bg-[#842E1A] transition-colors focus:outline-none focus:ring-2 focus:ring-[#A14527] focus:ring-opacity-50 shadow-md"
                 >
                   {isSending ? "Sending..." : "Send Message"}
                 </button>
