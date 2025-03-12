@@ -120,7 +120,7 @@ const ContactSection = () => {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <div className="w-full lg:w-1/2">
               <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-              <p className="mb-4 lg:text-[1.0em] sm:text-[0.975em]">
+              <p className="mb-4 text-black font-medium lg:text-[1.0em] sm:text-[0.975em]">
                 Feel free to reach out to us for any inquiries or
                 collaborations. We're here to assist you and answer any
                 questions you may have.
@@ -136,7 +136,7 @@ const ContactSection = () => {
               {/* Contact Information Section */}
               <div
                 style={{ fontFamily: "Poppins" }}
-                className="flex text-gray-300 flex-col gap-4 lg:text-[1.0em] sm:text-[0.975em] mt-4"
+                className="flex text-gray-300flex-col gap-4 lg:text-[1.0em] sm:text-[0.975em] mt-4"
               >
                 <p>
                   <strong>Location</strong> <br />
