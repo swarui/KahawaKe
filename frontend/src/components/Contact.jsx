@@ -120,12 +120,12 @@ const ContactSection = () => {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <div className="w-full lg:w-1/2">
               <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-              <p className="mb-6 lg:text-[1.0em] sm:text-[0.975em]">
+              <p className="mb-4 lg:text-[1.0em] sm:text-[0.975em]">
                 Feel free to reach out to us for any inquiries or
                 collaborations. We're here to assist you and answer any
                 questions you may have.
               </p>
-              <p className="mb-6 lg:text-[1.0em] sm:text-[0.975em]    ">
+              <p className="mb-4 lg:text-[1.0em] sm:text-[0.975em]    ">
                 Our team is dedicated to providing the support you need. Whether
                 you're looking for partnership opportunities, information about
                 our services, or simply want to say hello, we'd love to hear
