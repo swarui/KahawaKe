@@ -125,7 +125,7 @@ const ContactSection = () => {
                 collaborations. We're here to assist you and answer any
                 questions you may have.
               </p>
-              <p className="mb-4 lg:text-[1.0em] sm:text-[0.975em]    ">
+              <p className="mb-4 text-black font-medium lg:text-[1.0em] sm:text-[0.975em]    ">
                 Our team is dedicated to providing the support you need. Whether
                 you're looking for partnership opportunities, information about
                 our services, or simply want to say hello, we'd love to hear
