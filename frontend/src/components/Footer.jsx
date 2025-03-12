@@ -13,7 +13,7 @@ function Footer() {
         <a href="https://kahawa-ke.netlify.app/" target="_blank" rel="noopener noreferrer">
     <img 
       src={Logo} 
-      className="w-16 h-auto"
+      className="w-16 h-auto filter brightness-900"
       alt="Kahawa Ke Logo" 
     />
   </a>
