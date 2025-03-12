@@ -136,7 +136,7 @@ const ContactSection = () => {
               {/* Contact Information Section */}
               <div
                 style={{ fontFamily: "Poppins" }}
-                className="flex flex-col gap-4 text-sm sm:text-md mt-6"
+                className="flex text-gray-300 flex-col gap-4 lg:text-[1.0em] sm:text-[0.975em] mt-4"
               >
                 <p>
                   <strong>Location</strong> <br />
