@@ -136,7 +136,7 @@ const ContactSection = () => {
               {/* Contact Information Section */}
               <div
                 style={{ fontFamily: "Poppins" }}
-                className="flex text-gray-300flex-col gap-4 lg:text-[1.0em] sm:text-[0.975em] mt-4"
+                className="flex text-gray-300flex-col gap-6 lg:text-[1.0em] sm:text-[0.975em] mt-6"
               >
                 <p>
                   <strong>Location</strong> <br />
@@ -150,8 +150,8 @@ const ContactSection = () => {
                 </p>
                 
               </div>
-                 <div className="flex justify-start md:justify-center gap-4 text-center sm:justify-center">
-                  <a href="#" className="hover:text-orange-500 transition duration-300">
+              <div className="flex space-x-3 mt-5 ">
+              <a href="#" className="hover:text-orange-500 transition duration-300">
                     <FaInstagram className="w-6 h-5 sm:w-5 sm:h-5" />
                   </a>
                   <a href="#" className="hover:text-orange-500 transition duration-300">
