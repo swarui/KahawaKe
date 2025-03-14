@@ -154,8 +154,8 @@ const ContactSection = () => {
                 </p>
                 <p>
                   <strong>Contact Us</strong> <br />
-                  P: +254 79555554 262 <br />
-                  M: mainotei@gmail.com
+                  P: +254 790 224262 <br />
+                  M: kahawake@gmail.com
                 </p>
                 
               </div>
