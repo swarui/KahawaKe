@@ -28,23 +28,27 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
-
+  
     try {
       const response = await fetch("https://kahawake-1.onrender.com/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         Swal.fire({
-          title: "Success!",
+          title: "<span style='font-family: Poppins;'>Success!</span>",
           text: "Message sent successfully.",
           icon: "success",
           timer: 2000,
           toast: true,
           position: "top-end",
+          customClass: {
+            popup: 'poppins-font', // Custom class for the popup
+          }
         });
+  
         setFormData({
           fullName: "",
           emailAddress: "",
@@ -53,26 +57,32 @@ const ContactSection = () => {
         });
       } else {
         Swal.fire({
-          title: "Oops!",
+          title: "<span style='font-family: Poppins;'>Oops!</span>",
           text: "Failed to send your message.",
           icon: "error",
           position: "top-end",
           toast: true,
+          customClass: {
+            popup: 'poppins-font',
+          }
         });
       }
     } catch (error) {
       Swal.fire({
-        title: "Error!",
+        title: "<span style='font-family: Poppins;'>Error!</span>",
         text: "An error occurred. Please try again later.",
         icon: "error",
         position: "top-end",
         toast: true,
+        customClass: {
+          popup: 'poppins-font',
+        }
       });
     } finally {
       setIsSending(false);
     }
   };
-
+  
   return (
     <section id="contact" className="w-full py-12 md:py-12 lg:py-24 bg-orange-900 text-white ">
       <div style={{fontFamily:'Poppins'}}   className="container mx-auto px-4 sm:px-6 lg:px-8">
