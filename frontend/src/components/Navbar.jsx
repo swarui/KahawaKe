@@ -11,8 +11,12 @@ function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
-  const handleLinkClick = () => {
-    setTimeout(() => setIsOpen(false), 300)
+  const handleLinkClick = (href) => {
+    const targetSection = document.querySelector(href)
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setTimeout(() => setIsOpen(false), 300)
+    }
   }
 
   const navLinks = [
@@ -28,7 +32,7 @@ function Navbar() {
       const scrollPosition = window.scrollY
       const sectionPositions = navLinks
         .map((link) => {
-          const section = document.querySelector(link.href.replace("#", "#"))
+          const section = document.querySelector(link.href)
           if (section) {
             return { name: link.href.substring(1), offset: section.offsetTop }
           }
@@ -132,7 +136,7 @@ function Navbar() {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        onClick={handleLinkClick}
+                        onClick={() => handleLinkClick(link.href)}
                         className={`block py-2 px-4 rounded-md transition-colors duration-300 ${
                           activeSection === link.href.substring(1)
                             ? "bg-orange-100 text-orange-800 font-medium"
