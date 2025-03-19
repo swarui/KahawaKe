@@ -6,7 +6,7 @@ import kahawa from '../assets/Kahawa2.png'
 
 export default function Home() {
   return (
-    <div  id="home" className="min-h-screen bg-amber-50/50">
+    <div  id="home" className="min-h-screen mt-10 lg:mt-0 bg-amber-50/50">
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 opacity-5 -z-10">
         <Coffee className="w-40 h-40 sm:w-64 sm:h-64 text-orange-800" />
@@ -96,7 +96,7 @@ export default function Home() {
           >
             <div className="relative w-full max-w-md sm:max-w-lg aspect-square">
               {/* Background decorative circle */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-200 to-amber-100 rounded-full opacity-30 transform -translate-x-4 translate-y-4" />
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-200 to-amber-100 rounded-full opacity-30 w-[70%] h-[70%] sm:w-[80%] sm:h-[80%] md:w-[90%] md:h-[90%] lg:w-full lg:h-full transform -translate-x-2 sm:-translate-x-4 translate-y-2 sm:translate-y-4 mx-auto" />
 
               {/* Main image with shadow */}
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
@@ -110,11 +110,16 @@ export default function Home() {
                 transition={{ delay: 0.8, duration: 0.5 }}
                 className="absolute -bottom-4 -right-4 bg-white rounded-full shadow-lg p-3 z-20"
               >
-                <div className="bg-orange-800 text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex flex-col items-center justify-center text-center">
-                  <span className="text-[10px] sm:text-xs">Premium</span>
-                  <span className="font-bold">Kenyan</span>
-                  <span className="text-[10px] sm:text-xs">Coffee</span>
-                </div>
+                <div 
+  style={{ fontFamily: 'Poppins' }} 
+  className="bg-orange-800 text-white rounded-full w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 
+             flex flex-col items-center justify-center text-center p-2"
+>
+  <span className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm">Premium</span>
+  <span className="font-bold text-[10px] sm:text-sm md:text-base lg:text-lg">Kenyan</span>
+  <span className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm">Coffee</span>
+</div>
+
               </motion.div>
             </div>
           </motion.div>

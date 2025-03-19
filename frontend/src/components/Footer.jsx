@@ -5,7 +5,7 @@ import { FaFacebookF } from "react-icons/fa6";
 
 function Footer() {
   return (
-    <footer className="bg-black text-gray-300  px-10 md:px-20">
+    <footer className="bg-[#1a1a1a] text-gray-300  px-10 md:px-20">
       {/* Top Section */}
       <div className="flex flex-col md:flex-row justify-between items-center border-b border-gray-100 pb- gap-6">
         {/* Logo and Name */}
@@ -13,7 +13,7 @@ function Footer() {
         <a href="https://kahawa-ke.netlify.app/"  rel="noopener noreferrer">
     <img 
       src={Logo} 
-      className="w-16 h-auto filter brightness-900"
+      className="w-16 h-auto filter brightness-500"
       alt="Kahawa Ke Logo" 
     />
   </a>

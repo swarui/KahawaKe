@@ -1,22 +1,28 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Coffee, MapPin, Award, Users } from "lucide-react"
-import img from "../assets/About.png"
+import { motion } from "framer-motion";
+import { Coffee, MapPin, Award, Users } from "lucide-react";
+import img from "../assets/About.png";
 
 export default function AboutUs() {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } },
-  }
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
-  }
+  };
 
   return (
-    <div id="about" className="bg-gradient-to-b from-amber-50/50 to-white py-12 sm:py-16 lg:py-24">
+    <div
+      id="about"
+      className="bg-gradient-to-b from-amber-50/50 to-white py-12 sm:py-16 lg:py-24"
+    >
       <div className="w-full px-4 sm:px-6">
         {/* Section Title */}
         <motion.div
@@ -42,7 +48,10 @@ export default function AboutUs() {
             </h3>
             <div className="h-[1px] w-8 sm:w-10 bg-orange-800/50"></div>
           </div>
-          <p  style={{fontFamily:'Poppins'}}  className="max-w-2xl mx-auto text-stone-600 text-sm sm:text-base mt-4">
+          <p
+            style={{ fontFamily: "Poppins" }}
+            className="max-w-2xl mx-auto text-stone-600 text-sm sm:text-base mt-4"
+          >
             Discover the story behind Kenya's most beloved coffee brand
           </p>
         </motion.div>
@@ -73,9 +82,16 @@ export default function AboutUs() {
                 transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
                 className="absolute -bottom-4 -right-4 bg-white rounded-full shadow-lg p-2 z-10"
               >
-                <div className="bg-green-800 text-white rounded-full w-12 h-12 sm:w-16 sm:h-16 flex flex-col items-center justify-center text-center">
-                  <span className="text-xs">Since</span>
-                  <span className="font-bold">2024</span>
+                <div style={{fontFamily:'Poppins'}}
+                  className="bg-green-800 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 
+             flex flex-col items-center justify-center text-center p-2 gap-[2px] sm:gap-[3px] md:gap-[4px]"
+                >
+                  <span className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm">
+                    Since
+                  </span>
+                  <span className="font-bold text-[10px] sm:text-sm md:text-base lg:text-lg">
+                    2024
+                  </span>
                 </div>
               </motion.div>
             </div>
@@ -94,9 +110,10 @@ export default function AboutUs() {
               style={{ fontFamily: "Poppins" }}
               className="text-sm sm:text-base mt-4 sm:mt-6 leading-relaxed text-stone-700 max-w-xl"
             >
-              <span className="font-semibold text-orange-800">Kahawa Ke</span>, where coffee and comfort come together
-              in perfect harmony. Nestled in the heart of Nairobi, Kenya, we pride ourselves on offering a unique
-              experience for coffee lovers and travelers alike.
+              <span className="font-semibold text-orange-800">Kahawa Ke</span>,
+              where coffee and comfort come together in perfect harmony. Nestled
+              in the heart of Nairobi, Kenya, we pride ourselves on offering a
+              unique experience for coffee lovers and travelers alike.
             </motion.p>
 
             <motion.p
@@ -104,15 +121,14 @@ export default function AboutUs() {
               style={{ fontFamily: "Poppins" }}
               className="text-sm sm:text-base mt-4 sm:mt-6 leading-relaxed text-stone-700 max-w-xl"
             >
-              At Kahawa Ke, we believe that great coffee isn't just a drink, it's a lifestyle. Our beans are ethically
-              sourced from local Kenyan farmers, ensuring the highest quality and supporting our community.
+              At Kahawa Ke, we believe that great coffee isn't just a drink,
+              it's a lifestyle. Our beans are ethically sourced from local
+              Kenyan farmers, ensuring the highest quality and supporting our
+              community.
             </motion.p>
-
-
-
           </motion.div>
         </div>
       </div>
     </div>
-  )
+  );
 }
