@@ -1,125 +1,125 @@
-import { useState, useEffect } from "react";
-import { FaBarsStaggered } from "react-icons/fa6";
-import { LiaTimesCircleSolid } from "react-icons/lia";
-import Logo from "../assets/logo.png";
+"use client"
+
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X, Coffee } from "lucide-react"
+import logo from '../assets/logo.png'
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("home")
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen)
 
-  // Effect to show or hide navbar on scroll
+  // Navigation links
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Menu", href: "#menu" },
+    { name: "About Us", href: "#about" },
+    { name: "Services", href: "#service" },
+    { name: "Contact", href: "#contact" },
+  ]
+
+  // Track scroll and update active section
   useEffect(() => {
     const handleScroll = () => {
-    if (window.scrollY > lastScrollY && window.scrollY > 100) {
-        // If scrolling down and scrolled past 100px, hide navbar
-        setShowNavbar(false);
-      } else {
-        // If scrolling up, show navbar
-        setShowNavbar(true);
-      }
-      setLastScrollY(window.scrollY);
-    };
+      const scrollPosition = window.scrollY
+      const sectionPositions = navLinks.map(link => {
+        const section = document.querySelector(link.href)
+        if (section) {
+          return { name: link.href.substring(1), offset: section.offsetTop }
+        }
+        return null
+      }).filter(Boolean)
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+      const currentSection = sectionPositions.reduce((prev, curr) => {
+        return scrollPosition >= curr.offset ? curr : prev
+      })
+
+      if (currentSection) {
+        setActiveSection(currentSection.name)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <>
-      {/* Main Body */}
-      <div
-        style={{ fontFamily: "Poppins", backgroundColor: "#EFE0BB" }}
-        className={`fixed top-0 left-0 w-full h-16 flex justify-between z-50 text-black lg:py-2 px-10  transition-transform duration-300 ${
-          showNavbar ? "translate-y-0" : "-translate-y-full"
-        }`}
+      {/* Main Navbar */}
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed top-0 left-0 w-full z-50"
       >
-        <div className="flex items-center">
-          <a href="https://kahawa-ke.netlify.app/">
-            {" "}
-            <img src={Logo} className="w-20 h-auto" alt="Logo" />
-          </a>
-        </div>
-        {/* The opening and closing icon */}
-        <div className="lg:hidden flex items-center">
-          <button onClick={toggleMenu} className="flex items-center">
-            <FaBarsStaggered
-              size={20}
-              className={`text-black mr-5 ${isOpen ? "hidden" : "block"}`}
-            />
-            <LiaTimesCircleSolid
-              size={30}
-              className={`z-10 mr-3 text-black cursor-pointer ${
-                isOpen ? "block" : "hidden"
-              } `}
-            />
-          </button>
-        </div>
-        {/* Main Navbar */}
-        <div className="hidden lg:flex items-center justify-center w-full text-black">
-          <ul style={{fontFamily:'Poppins'}}  className="flex flex-row gap-8 text-[14.7px] cursor-pointer">
-            <a href="#home">
-              <li className="hover:text-orange-700 " >Home</li>
-              
+        <div
+          style={{ fontFamily: "Poppins" }}
+          className="bg-gradient-to-r from-amber-50 to-amber-100 backdrop-blur-sm border-b border-amber-200/50 shadow-sm"
+        >
+          <div className="container mx-auto px-4 h-16 lg:h-20 flex items-center justify-between">
+            {/* Logo */}
+            <a href="/" className="flex items-center gap-2">
+              <div className="relative w-10 h-10 lg:w-12 lg:h-12">
+                <img src={logo || "/placeholder.svg"} alt="Kahawa Ke Logo" className="w-full h-full object-contain" />
+              </div>
+              <span className="font-bold text-orange-900 text-lg lg:text-xl hidden sm:block">Kahawa Ke</span>
             </a>
-            <a href="#menu">
-              <li className="hover:text-orange-800 "  >Menu</li>
-            </a>
-            <a href="#about">
-              <li className="hover:text-orange-800 " >About Us</li>
-            </a>
-            <a href="#about">
-              <li className="hover:text-orange-800 " >Service</li>
-            </a>
-            <a href="#contact">
-              <li className="hover:text-orange-800 ">Contact</li>
-            </a>
-          </ul>
-        </div>
-        <div className="hidden lg:flex fixed right-10">
-          <a href="mailto:mainastevew@gmail.com">
-            <button className="bg-gradient-to-r from-yellow-500 to-yellow-800 text-black transition duration-500 hover:bg-green-700 rounded-full px-3 py-2 mt-1.5 shadow-lg text-[0.795em]">
-              Get Voucher
-            </button>
-          </a>
-        </div>
-      </div>
 
-      {/* Small Navbar */}
-      <div
-        style={{ fontFamily: "Poppins" }}
-        className={`fixed top-0 right-0 w-full h-20vh text-center overflow-visible text-black bg-white bg-opacity-40 backdrop-blur-lg transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out lg:hidden`}
-      >
-        <ul className="flex flex-col gap-3 mt-10 text-lg cursor-pointer px-4 font-medium text-[0.875em]">
-          <a href="#home">
-            {" "}
-            <li onClick={toggleMenu}>Home</li>
-          </a>
-          <a href="#menu">
-            {" "}
-            <li onClick={toggleMenu}>Menu</li>
-          </a>
-          <a href="#about">
-            {" "}
-            <li onClick={toggleMenu}>About Us</li>
-          </a>
-          <a href="#service">
-            <li onClick={toggleMenu}>Service</li>
-          </a>
-          <a href="#contact">
-            <li onClick={toggleMenu}>Contact</li>
-          </a>
-        </ul>
-      </div>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center justify-center">
+              <ul className="flex gap-8 text-sm font-medium">
+                {navLinks.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className={`relative py-2 px-1 transition-colors duration-300 ${
+                        activeSection === link.href.substring(1)
+                          ? "text-orange-800"
+                          : "text-stone-700 hover:text-orange-800"
+                      }`}
+                    >
+                      {link.name}
+                      {activeSection === link.href.substring(1) && (
+                        <motion.div
+                          layoutId="activeSection"
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-800"
+                          transition={{ duration: 0.3 }}
+                        />
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CTA Button */}
+            <div className="hidden lg:block">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-700 to-orange-800 text-white py-2 px-4 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <Coffee className="w-4 h-4" />
+                Get Voucher
+              </motion.a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="lg:hidden p-2 text-stone-700 hover:text-orange-800 focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+      </motion.nav>
     </>
-  );
+  )
 }
-export default Navbar;
+
+export default Navbar
