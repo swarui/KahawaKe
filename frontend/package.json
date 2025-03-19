@@ -13,9 +13,12 @@
     "@tailwindcss/vite": "^4.0.12",
     "animate.css": "^4.1.1",
     "axios": "^1.8.2",
+    "framer-motion": "^12.5.0",
+    "lucide-react": "^0.483.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "sonner": "^2.0.1",
     "sweetalert2": "^11.17.2",
     "swiper": "^11.2.5",
     "tailwindcss": "^4.0.12"
