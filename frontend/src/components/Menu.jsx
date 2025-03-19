@@ -8,6 +8,9 @@ import Brew from "../assets/Brew.jpeg";
 import Ricano from "../assets/Ricano.png";
 import Mocha2 from "../assets/Mocha2.png";
 import Mocha4 from "../assets/Mocha4.png";
+import { motion } from "framer-motion"
+
+
 
 
 
@@ -35,19 +38,33 @@ function MenuItem({ title, description, price, image }) {
 
 function Menu() {
   return (
-    <div id="menu" className="min-h-screen bg-[#f8f5f3] p-6 sm:p-8">
-      <h1
-        style={{ fontFamily: "Poppins" }}
-        className="text-center text-3xl font-bold text-[#3e2723] mt-6"
-      >
-        Menu
-      </h1>
-      <h2
-        style={{ fontFamily: "Poppins" }}
-        className="text-center text-md text-[#804933] mt-2"
-      >
-        Best Selling
-      </h2>
+    <div id="menu" className="min-h-screen bg-[#f8f5f3] p-6 sm:p-8 py-12 sm:py-16 lg:py-24">
+       {/* Section header */}
+       <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-12"
+        >
+         <h2
+            style={{ fontFamily: "Poppins" }}
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-2"
+          >
+Menu          </h2>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <div className="h-[1px] w-8 sm:w-10 bg-orange-800/50"></div>
+            <h3
+              style={{ fontFamily: "Poppins" }}
+              className="text-sm sm:text-md uppercase tracking-wider text-orange-800/80"
+            >
+Best Selling            </h3>
+            <div className="h-[1px] w-10 bg-orange-800/50"></div>
+          </div>
+          <p style={{fontFamily:'Poppins'}}  className="max-w-2xl mx-auto text-stone-600 text-sm sm:text-base mt-4">
+            Explore our handcrafted selection of premium Kenyan coffee
+          </p>
+        </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 max-w-6xl mx-auto mt-8">
         <MenuItem
