@@ -56,21 +56,22 @@ function Footer() {
       </div>
 
       <div
-        style={{ fontFamily: "Poppins" }}
-        className="flex justify-center py-4"
-      >
-        <span className="bg-slate-100 px-2 py-1 text-[12px] text-black">
-          © Kahawa Ke 2024, built by
-          <a
-            href="https://swarui.netlify.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" underline ml-1"
-          >
-            this guy
-          </a>
-        </span>
-      </div>
+  style={{ fontFamily: "Poppins" }}
+  className="flex justify-center py-4 px-4 text-center"
+>
+  <span className="bg-slate-100 px-3 py-2 text-[10px] sm:text-[10px] md:text-[11px] text-black">
+    © Kahawa Ke 2024, built by
+    <a
+      href="https://swarui.netlify.app"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline ml-1"
+    >
+      this guy
+    </a>
+  </span>
+</div>
+
     </footer>
   );
 }
