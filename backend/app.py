@@ -9,7 +9,7 @@ from flask_cors import CORS
 load_dotenv()  # Load environment variables
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["https://kahawa-ke.netlify.app", "http://localhost:5173"]}})
+CORS(app, resources={r"/*": {"origins": ["https://kahawa-ke.netlify.app", "http://localhost:5174"]}})
 
 EMAIL_USER = os.getenv("EMAIL_USER")
 EMAIL_PASS = os.getenv("EMAIL_PASS")
