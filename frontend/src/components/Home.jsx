@@ -6,7 +6,7 @@ import kahawa from "../assets/Kahawa2.webp"
 
 export default function Home() {
   return (
-    <div id="home" className="min-h-screen w-full bg-amber-50/50 overflow-x-hidden relative pt-16 pb-8 sm:py-12">
+    <div id="home" className="min-h-screen sm:min-h-0 w-full bg-amber-50/50 overflow-x-hidden relative pt-16 pb-8 sm:py-12">
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 opacity-5 -z-10 hidden sm:block">
         <Coffee className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 text-orange-800" />
