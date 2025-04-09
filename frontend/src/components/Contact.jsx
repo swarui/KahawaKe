@@ -30,11 +30,14 @@ const ContactSection = () => {
     setIsSending(true);
 
     try {
-      const response = await fetch("https://kahawakedualboot1.onrender.com/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://kahawakedualboot1.onrender.com/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         Swal.fire({
@@ -80,12 +83,10 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="w-full py-10 md:py-12 lg:py-20 bg-orange-900 text-white"
-    >
+      className="w-full py-10 md:py-12 lg:py-20 bg-orange-900 text-white">
       <div
         style={{ fontFamily: "Poppins" }}
-        className="container mx-auto px-4 sm:px-6 lg:px-8"
-      >
+        className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           <div className="w-full lg:w-1/2">
             <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-4">
@@ -155,8 +156,7 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full py-3 bg-orange-900 text-white text-sm sm:text-lg rounded-md hover:bg-[#842E1A] transition-colors"
-              >
+                className="w-full py-3 bg-orange-900 text-white text-sm sm:text-lg rounded-md hover:bg-[#842E1A] transition-colors">
                 {isSending ? "Sending..." : "Send Message"}
               </button>
             </form>

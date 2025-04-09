@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Coffee, Download, Mail } from "lucide-react"
-import kahawa from "../assets/Kahawa2.png"
+import kahawa from "../assets/Kahawa2.webp"
 
 export default function Home() {
   return (

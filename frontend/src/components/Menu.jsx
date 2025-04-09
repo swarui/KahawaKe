@@ -1,13 +1,13 @@
 import React from "react";
-import Americano from "../assets/Americano.jpeg";
+import Americano from "../assets/Americano.webp";
 import Cappuccino from "../assets/Capucino.jpeg";
-import Corado from "../assets/Corado.jpeg";
-import Iced from "../assets/Iced.jpeg";
-import Latte from "../assets/Latte.jpeg";
-import Brew from "../assets/Brew.jpeg";
-import Ricano from "../assets/Ricano.png";
-import Mocha2 from "../assets/Mocha2.png";
-import Mocha4 from "../assets/Mocha4.png";
+import Corado from "../assets/Corado.webp";
+import Iced from "../assets/Iced.webp";
+import Latte from "../assets/Latte.webp";
+import Brew from "../assets/Brew.webp";
+import Ricano from "../assets/Ricano.webp";
+import Mocha2 from "../assets/Mocha2.webp";
+import Mocha4 from "../assets/Mocha4.webp";
 import { motion } from "framer-motion"
 
 
