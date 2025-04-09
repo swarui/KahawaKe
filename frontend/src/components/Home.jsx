@@ -6,7 +6,7 @@ import kahawa from "../assets/Kahawa2.webp"
 
 export default function Home() {
   return (
-    <div id="home" className="min-h-screen w-full mt-6 sm:mt-8 lg:mt-0 bg-amber-50/50 overflow-hidden relative">
+    <div id="home" className="min-h-screen w-full bg-amber-50/50 overflow-x-hidden relative pt-16 pb-8 sm:py-12">
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 opacity-5 -z-10 hidden sm:block">
         <Coffee className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 text-orange-800" />
@@ -16,7 +16,7 @@ export default function Home() {
       </div>
 
       {/* Main content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16">
           {/* Left Text Body */}
           <motion.div
@@ -27,7 +27,7 @@ export default function Home() {
           >
             <div className="relative">
               <h1
-                className="text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] 2xl:text-[10rem] font-bold text-orange-800 tracking-tighter leading-none"
+                className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-bold text-orange-800 tracking-tighter leading-none"
                 style={{ fontFamily: "moonet" }}
               >
                 KAHAWA
@@ -90,17 +90,17 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Image Container */}
+          {/* Image Container - Only show on larger screens */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-full sm:w-4/5 md:w-3/4 lg:w-1/2 flex justify-center items-center relative mt-8 lg:mt-0"
+            className="w-full sm:w-4/5 md:w-3/4 lg:w-1/2 flex justify-center items-center relative mt-8 lg:mt-0 hidden sm:flex"
           >
             <div className="relative w-full max-w-[280px] xs:max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-square">
               {/* Background decorative circle */}
               <div
-                className="absolute inset-0 bg-gradient-to-br  rounded-md opacity-30 
+                className="absolute inset-0 bg-gradient-to-br rounded-md opacity-30 
                               w-[85%] h-[85%] sm:w-[90%] sm:h-[90%] lg:w-full lg:h-full 
                               transform -translate-x-2 sm:-translate-x-3 md:-translate-x-4 
                               translate-y-2 sm:translate-y-3 md:translate-y-4 mx-auto"
@@ -116,7 +116,7 @@ export default function Home() {
                 />
               </div>
 
-              {/* Floating badge - UPDATED to be more balanced and responsive */}
+              {/* Floating badge */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -132,6 +132,44 @@ export default function Home() {
                   <span className="text-[6px] xs:text-[7px] sm:text-[8px] md:text-[9px] lg:text-xs">Premium</span>
                   <span className="font-bold text-[8px] xs:text-[9px] sm:text-xs md:text-sm lg:text-base">Kenyan</span>
                   <span className="text-[6px] xs:text-[7px] sm:text-[8px] md:text-[9px] lg:text-xs">Coffee</span>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Small screen image - Only show on mobile */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-full flex justify-center items-center relative mt-6 sm:hidden"
+          >
+            <div className="relative w-full max-w-[200px] aspect-square">
+              {/* Main image with shadow */}
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl w-full mx-auto">
+                <img
+                  className="w-full h-auto object-cover"
+                  src={kahawa || "/placeholder.svg"}
+                  alt="Kahawa premium coffee"
+                  loading="eager"
+                />
+              </div>
+
+              {/* Floating badge */}
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.8, duration: 0.5 }}
+                className="absolute -bottom-2 -right-2 bg-white rounded-full shadow-lg p-1.5 z-20"
+              >
+                <div
+                  style={{ fontFamily: "Poppins" }}
+                  className="bg-orange-800 text-white rounded-full w-10 h-10
+                            flex flex-col items-center justify-center text-center p-0.5"
+                >
+                  <span className="text-[6px]">Premium</span>
+                  <span className="font-bold text-[8px]">Kenyan</span>
+                  <span className="text-[6px]">Coffee</span>
                 </div>
               </motion.div>
             </div>
