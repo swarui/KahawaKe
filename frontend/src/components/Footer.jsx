@@ -32,10 +32,10 @@ function Footer() {
       </div>
 
       <div style={{ fontFamily: "Poppins" }} className="w-full flex justify-center py-0 px-4 text-center">
-        <span className="bg-black text-white px-3 mt-10 py-1 text-[10px] sm:text-[10px] md:text-[11px]">
-          © Kahawa Ke 2024 {" "}
-          <a href="https://swarui.netlify.app" target="_blank" rel="noopener noreferrer" className="underline ml-1">
-            {/* this guy */}
+      <span className="bg-black text-white px-3 mt-10 py-1 text-[10px] sm:text-[10px] md:text-[11px]">
+      © Kahawa Ke 2024, built by{" "}
+          <a href="https://stevewarui.netlify.app" target="_blank" rel="noopener noreferrer" className="underline ml-1">
+            this guy
           </a>
         </span>
       </div>
